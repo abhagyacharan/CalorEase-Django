@@ -47,7 +47,7 @@ Download the model files from the following links:
      pip install -r requirements.txt
      ```
 2. **Run the Application**:
-   - Replace 'GROQ_API_KEY' in counter/views.py with your Chat-Groq API KEY.
+   - Replace `'GROQ_API_KEY'` in counter/views.py with your Chat-Groq API KEY.
    - Start the server:
      ```bash
      python manage.py runserver
@@ -60,8 +60,8 @@ Once the server is running, open the web application in your browser. You can ei
 - Caloric value and macronutrient breakdown of the food item per 100 grams.
 - Estimated time to burn the calories through various activities like cycling, swimming, jogging, and gym workouts.
 
-### Bugs and Fixes
+## Bugs and Fixes
 If you encounter any bugs or have suggestions for improvements, please feel free to reach out at:
-- [a.bhagyacharan@gmail.com](a.bhagyacharan@gmail.com)
+- [Email](https://a.bhagyacharan@gmail.com)
 - [X/Twitter](https://x.com/abhagyacharan)
-- [LinkedIn](www.linkedin.com/in/abhagyacharan)
+- [LinkedIn](https://linkedin.com/in/abhagyacharan)
