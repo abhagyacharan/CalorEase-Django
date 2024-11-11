@@ -34,10 +34,7 @@ Due to size limitations, model files are not included in this repository.
 Download the model files from the following links:
    - Model Files (173MB): [Download from Google Drive](https://drive.google.com/drive/folders/1xyhAtGVIy9vxcYW4Jo0fm7kijxYIIQqW?usp=sharing)
    - Place the downloaded files in the following directory structure:
-   - '''
-        classify/
-            └── model
-     '''
+   - classify/`model`
 
 ## Getting Started
 1. **Download Files**:
@@ -56,7 +53,7 @@ Download the model files from the following links:
      python manage.py runserver
      ```
 3. **Download the Dataset**:
-   - Dataset link: `[https://www.kaggle.com/datasets/theeyeschico/indian-food-classification]`
+   - Dataset link: (https://www.kaggle.com/datasets/theeyeschico/indian-food-classification)
 
 ## Usage
 Once the server is running, open the web application in your browser. You can either search for a food item by name or upload an image to classify it. On the results page, you’ll see:
