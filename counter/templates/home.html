@@ -1,0 +1,194 @@
+{% load static %} {% load mathfilters %} {% load humanize %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <style>
+        /* Full-page background setup */
+        body, html {
+            font-family: "Oswald", sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            height: 100%;
+            background-image: url("{% static 'images/grainy5.png' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow-x: hidden;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;  /* Adjust as needed */
+            left: 20px; /* Adjust as needed */
+            width: 45px; /* Size adjustments */
+            height: 45px;
+            transition: .2s ease;
+        }
+
+        .back-button:hover{
+            scale: 1.1;
+        }
+
+        .back-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;    
+            min-height: 100vh;
+            /* padding-top: 40px;  */
+        }
+
+        .calorie-info-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* margin-top: 20px; */
+        }
+
+        .calorie-info-box h1 {
+            font-family: "Oswald", sans-serif;
+            font-size: 60px;
+            font-weight: 100;
+        }
+
+        .calorie-info-box strong {
+            font-weight: 400;
+        }
+
+        .calorie-info-box span span {
+            border-bottom: 3px solid white;
+        }
+
+        /* Responsive scaling to avoid overflow */
+        .row {
+            scale: 90%;
+            margin: 0;
+        }
+
+        .caloriescont {
+            background-color: #ffffff;
+            font-size: 1.2em;
+            width: 80%;
+        }
+
+        .caloriescont ul {
+            padding: 0;
+        }
+
+        .caloriescont ul li {
+            list-style: none;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #a1a1a1;
+            width: 80%;
+            font-size: 1.2em;
+        }
+
+        .caloriescont h5 {
+            color: #7e0fc9;
+            font-size: 25px;
+            font-family: "Oswald", sans-serif;
+        }
+
+        .servingsize {
+            background-color: #000000;
+            padding: 10px;
+            color: #ffffff;
+        }
+        .burn-calories{
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="row justify-content-center col-md-8">
+                {% if api %}
+                <div class="calorie-info-box text-center">
+                    <h1 style="display: flex; gap: 0.5em; color: #ffffff;">
+                        <span>Calories in <span>{{ api.0.name | capfirst }}</span> :</span>
+                        <strong>{{api.0.calories }}</strong>
+                    </h1>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-10 caloriescont shadow rounded">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="mt-3 mb-4">Nutritional Values</h2>
+                            <ul>
+                                <li class="servingsize">Serving Size / 100 Grams <span class="float-end"></span></li>
+                                <li>Carbohydrates <span class="float-end">{{api.0.carbohydrates_total_g}} g</span></li>
+                                <li>Cholesterol <span class="float-end">{{api.0.cholesterol_mg}} mg</span></li>
+                                <li>Saturated fat <span class="float-end">{{api.0.fat_saturated_g}} g</span></li>
+                                <li>Total Fat <span class="float-end">{{api.0.fat_total_g}} g</span></li>
+                                <li>Fiber <span class="float-end">{{api.0.fiber_g}} g</span></li>
+                                <li>Potassium <span class="float-end">{{api.0.potassium_mg}} mg</span></li>
+                                <li>Protein <span class="float-end">{{api.0.protein_g}} g</span></li>
+                                <li>Sodium <span class="float-end">{{api.0.sodium_mg}} mg</span></li>
+                                <li>Sugar <span class="float-end">{{api.0.sugar_g}} g</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="mt-3 mb-4">To burn <strong>{{api.0.calories}}</strong> calories you will have to:</h2>
+                            <br>
+                            <div class="d-flex align-items-center mb-5 burn-calories">
+                                <img src="{% static 'images/running.png' %}" alt="Jog icon">
+                                <div class="ms-3">
+                                    <h5><strong>Jogging</strong></h5>
+                                    <p>Jog for <strong>{{api.0.calories | div:546 | mul:60 | floatformat:0}}</strong> minutes</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-5 burn-calories">
+                                <img src="{% static 'images/swim.jpg' %}" alt="Swim icon">
+                                <div class="ms-4">
+                                    <h5><strong>Swimming</strong></h5>
+                                    <p>Swim for <strong>{{api.0.calories | div:444 | mul:60 | floatformat:0}}</strong> minutes</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-5 burn-calories">
+                                <img src="{% static 'images/weightlifter.png' %}" alt="Gym icon">
+                                <div class="ms-4">
+                                    <h5><strong>Gym Workout</strong></h5>
+                                    <p>Workout for <strong>{{api.0.calories | div:502 | mul:60 | floatformat:0}}</strong> minutes</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-5 burn-calories">
+                                <img src="{% static 'images/cycling.jpg' %}" alt="Cycle icon">
+                                <div class="ms-4">
+                                    <h5><strong>Cycling</strong></h5>
+                                    <p>Cycle for <strong>{{api.0.calories | div:457 | mul:60 | floatformat:0}}</strong> minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <a href="{% url 'upload_page' %}" class="back-button"><img src="{% static 'images/back-button_white.png' %}" alt="back-button"></a>
+    </div>
+    
+</body>
+
+</html>
