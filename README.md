@@ -6,14 +6,14 @@ In today's fast-paced world, keeping track of calorie intake is vital for mainta
 ## Project Description
 This is a Full-Stack Django application designed to help users identify food items and provide detailed caloric and macronutrient information. Users can either search for a specific food item that is passed to an LLM or upload an image of their food. The application uses a finetuned InceptionV3 model to classify the food (20 classes) from the uploaded image. Additionally, it calculates the time required to burn the calories for that food through various physical activities like cycling, running, swimming, and gym workouts.
 
-### Key Features
+## Key Features
 1. **Search Food**: Users can search for any food item by name. The query is sent to the Chat-Groq chat model utilizing the Llama 3.1 70B LLM, which provides nutritional information, including the caloric value and macronutrients for the selected food.
 
 2. **Classify Food**: Users can upload an image of their food. The finetuned InceptionV3 model identifies the food item, and then the application retrieves the caloric and nutritional details using the Chat-Groq chat model. 
 
 3. **Calorie Burn Time Calculation**: For each food item, the application calculates how long it would take to burn the provided calories through different activities: Cycling, Swimming, Jogging, and Gym workouts. This personalized insight motivates users to stay active and make informed dietary choices.
 
-### Requirements
+## Requirements
 - **Languages**: Python
 - **Libraries**:
   - `tensorflow`
@@ -37,7 +37,7 @@ Download the model files from the following links:
    - classify/
          └── model
 
-### Getting Started
+## Getting Started
 1. **Download Files**:
    - Clone the repository from Github.
    - Download the Model Files.
@@ -56,7 +56,7 @@ Download the model files from the following links:
 3. **Download the Dataset**:
    - Dataset link: `[https://www.kaggle.com/datasets/theeyeschico/indian-food-classification]`
 
-### Usage
+## Usage
 Once the server is running, open the web application in your browser. You can either search for a food item by name or upload an image to classify it. On the results page, you’ll see:
 - Caloric value and macronutrient breakdown of the food item per 100 grams.
 - Estimated time to burn the calories through various activities like cycling, swimming, jogging, and gym workouts.
