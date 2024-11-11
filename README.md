@@ -3,6 +3,12 @@
 ## Overview
 In today's fast-paced world, keeping track of calorie intake is vital for maintaining a healthy lifestyle. With rising awareness of diet and nutrition, knowing the caloric value and macronutrient breakdown of foods we consume is essential. Despite this, many people overlook the importance of monitoring their calorie intake, which can lead to unhealthy eating habits and, ultimately, health issues. This project aims to make calorie tracking more accessible by providing an easy-to-use application that recognizes food items and provides detailed nutritional information, along with estimates for the time required to burn those calories through different activities.
 
+## Video
+<video width="640" height="360" controls>
+  <source src="D:\Github\CalorEase-Django\Demo Video\Calorease Github.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Project Description
 This is a Full-Stack Django application designed to help users identify food items and provide detailed caloric and macronutrient information. Users can either search for a specific food item that is passed to an LLM or upload an image of their food. The application uses a finetuned InceptionV3 model to classify the food (20 classes) from the uploaded image. Additionally, it calculates the time required to burn the calories for that food through various physical activities like cycling, running, swimming, and gym workouts.
 
