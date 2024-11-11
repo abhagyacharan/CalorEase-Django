@@ -53,7 +53,7 @@ Download the model files from the following links:
      python manage.py runserver
      ```
 3. **Download the Dataset**:
-   - Dataset link: (https://www.kaggle.com/datasets/theeyeschico/indian-food-classification)
+   - Dataset link: [Kaggle Indian Food Images (Top 20)](https://www.kaggle.com/datasets/theeyeschico/indian-food-classification)
 
 ## Usage
 Once the server is running, open the web application in your browser. You can either search for a food item by name or upload an image to classify it. On the results page, you’ll see:
@@ -62,4 +62,6 @@ Once the server is running, open the web application in your browser. You can ei
 
 ### Bugs and Fixes
 If you encounter any bugs or have suggestions for improvements, please feel free to reach out at:
-`a.bhagyacharan@gmail.com`
+- [a.bhagyacharan@gmail.com](a.bhagyacharan@gmail.com)
+- [X/Twitter](https://x.com/abhagyacharan)
+- [LinkedIn](www.linkedin.com/in/abhagyacharan)
