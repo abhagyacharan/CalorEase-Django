@@ -34,8 +34,10 @@ Due to size limitations, model files are not included in this repository.
 Download the model files from the following links:
    - Model Files (173MB): [Download from Google Drive](https://drive.google.com/drive/folders/1xyhAtGVIy9vxcYW4Jo0fm7kijxYIIQqW?usp=sharing)
    - Place the downloaded files in the following directory structure:
-   - classify/
-         └── model
+   - '''
+        classify/
+            └── model
+     '''
 
 ## Getting Started
 1. **Download Files**:
